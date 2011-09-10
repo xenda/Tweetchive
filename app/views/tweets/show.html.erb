@@ -1,25 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="tweet-wrapper" style="background-image:url('<%= @tweet.background_url %>')">
+	<div class="tweet">
+		<h2>
+		  <%= image_tag @tweet.photo_url %>
+		  <%= @tweet.screen_name %>
+		  <%= @tweet.name %>
+		</h2>
 
-<p>
-  <b>Screen name:</b>
-  <%= @tweet.screen_name %>
-</p>
+		<p>
+		  <%= @tweet.content %>
+		  <small><%= @tweet.tweeted_at %></small>
+		</p>
 
-<p>
-  <b>Content:</b>
-  <%= @tweet.content %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @tweet.name %>
-</p>
-
-<p>
-  <b>Photo url:</b>
-  <%= @tweet.photo_url %>
-</p>
+		<p>
+		  <%= @tweet.name %>
+		</p>
 
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+		<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+		<%= link_to 'Back', tweets_path %>
+	</div>
+</div>

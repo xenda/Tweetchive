@@ -9,6 +9,7 @@ class Tweet < ActiveRecord::Base
 		self.name = tweet.user.name
 		self.content = tweet.text
 		self.background_url = tweet.user.profile_background_image_url
+		puts tweet.user.profile_background_image_url
 		self.tweeted_at = DateTime.parse(tweet.created_at)
 		self.photo_url = tweet.user.profile_image_url
 	end

@@ -5,3 +5,10 @@
  *= require_self
  *= require_tree . 
 */
+.tweet-wrapper {
+	padding: 20px; margin:0px
+}
+
+.tweet {
+	background:white; padding: 20px;
+}

@@ -1,29 +1,27 @@
-<h1>Listing tweets</h1>
-
-<table>
-  <tr>
-    <th>Screen name</th>
-    <th>Content</th>
-    <th>Name</th>
-    <th>Photo url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Tweetchive</h1>
+<%= link_to 'New Tweet', new_tweet_path %>
 
 <% @tweets.each do |tweet| %>
-  <tr>
-    <td><%= tweet.screen_name %></td>
-    <td><%= tweet.content %></td>
-    <td><%= tweet.name %></td>
-    <td><%= tweet.photo_url %></td>
-    <td><%= link_to 'Show', tweet %></td>
-    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-    <td><%= link_to 'Destroy', tweet, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+
+<div class="tweet-wrapper" style="background-image:url('<%= tweet.background_url %>')">
+
+  <div class="tweet">
+  <h2>
+    <%= image_tag tweet.photo_url %>
+    <%= tweet.screen_name %>
+    <%= tweet.name %>
+  </h2>
+  <p>
+    <%= tweet.content %>
+    <small><%= tweet.tweeted_at %></small>
+  </p>
+  <p>
+  <%= link_to 'Edit', edit_tweet_path(tweet) %> |
+  <%= link_to 'Destroy', tweet, confirm: 'Are you sure?', method: :delete %>
+  </div>
+</div>
+
+
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Tweet', new_tweet_path %>
